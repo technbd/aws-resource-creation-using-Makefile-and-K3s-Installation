@@ -1,0 +1,22 @@
+apiVersion: network.kubesphere.io/v1alpha2
+kind: Eip
+metadata:
+    name: eip-sample-pool
+    annotations:
+      eip.openelb.kubesphere.io/is-default-eip: "true"
+spec:
+    address: 192.168.10.193-192.168.10.194
+    protocol: layer2
+    interface: eth0
+    disable: false
+status:
+    occupied: false
+    usage: 1
+    poolSize: 10
+    used: 
+      "192.168.10.193": "default/test-svc"
+    firstIP: 192.168.10.193
+    lastIP: 192.168.10.194
+    ready: true
+    v4: true
+
